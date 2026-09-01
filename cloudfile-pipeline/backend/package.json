@@ -1,0 +1,22 @@
+{
+  "name": "cloudfile-pipeline-backend",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.65",
+    "archiver": "^7.0.1",
+    "cloudfile-pipeline": "file:..",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1",
+    "pdfjs-dist": "^4.10.38",
+    "sharp": "^0.33.5",
+    "tesseract.js": "^6.0.1"
+  }
+}
