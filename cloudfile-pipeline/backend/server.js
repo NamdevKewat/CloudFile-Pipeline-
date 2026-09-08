@@ -7,6 +7,7 @@ import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
 import authRoutes from "./routes/authRoutes.js";
+import User from "./models/User.js";
 import { processPipeline } from "./services/pipelineService.js";
 
 const backendDir = path.dirname(fileURLToPath(import.meta.url));
@@ -95,6 +96,9 @@ app.use((e, _r, res, _n) => {
 });
 if (process.env.MONGO_URI) {
   await mongoose.connect(process.env.MONGO_URI);
+  await User.collection.dropIndex("username_1").catch((error) => {
+    if (error.codeName !== "IndexNotFound") throw error;
+  });
   console.log("MongoDB connected");
 } else {
   console.warn("MONGO_URI is not configured; authentication endpoints are unavailable");
