@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Loader2, ShieldCheck } from "lucide-react";
 
-const API = (import.meta.env.VITE_API_URL || "http://localhost:5000/api").replace(/\/$/, "");
+const API = (import.meta.env.VITE_API_URL || "/api").replace(/\/$/, "");
 
 export default function Auth({ onAuth }) {
   const [mode, setMode] = useState("login");
