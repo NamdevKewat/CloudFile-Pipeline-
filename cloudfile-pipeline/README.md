@@ -73,6 +73,8 @@ npm run dev
 For a complete startup from the project root, use `npm start` or `start.bat`.
 Set `MONGO_URI` and `JWT_SECRET` in `backend/.env` to enable authentication. The extraction API can run without MongoDB.
 
+For Render, use `npm run build` as the build command and `npm start` as the start command from the project root. The build command installs nested dependencies and builds the frontend; the start command only launches the backend so Render can detect `PORT` quickly.
+
 Frontend: http://localhost:5173  
 Backend: http://localhost:5000
 
