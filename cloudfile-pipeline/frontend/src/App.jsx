@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Auth from "./components/Auth";
 import Pipeline from "./components/Pipeline";
 
-const API = (import.meta.env.VITE_API_URL || "http://localhost:5000/api").replace(/\/$/, "");
+const API = (import.meta.env.VITE_API_URL || "/api").replace(/\/$/, "");
 
 export default function App() {
   const [user, setUser] = useState(null);

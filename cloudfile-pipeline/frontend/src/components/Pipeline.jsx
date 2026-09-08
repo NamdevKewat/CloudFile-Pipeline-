@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { CheckCircle2, FileArchive, FileJson, FileText, Loader2, LogOut, ShieldCheck, UploadCloud, X } from "lucide-react";
 
-const API = (import.meta.env.VITE_API_URL || "http://localhost:5000/api").replace(/\/$/, "");
+const API = (import.meta.env.VITE_API_URL || "/api").replace(/\/$/, "");
 const ACCEPTED_TYPES = ["application/pdf", "image/jpeg", "image/png", "image/webp", "text/plain"];
 const OUTPUTS = [
   ["json", FileJson, "JSON", "Structured text + metadata"],

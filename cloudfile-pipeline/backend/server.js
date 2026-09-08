@@ -10,6 +10,7 @@ import authRoutes from "./routes/authRoutes.js";
 import { processPipeline } from "./services/pipelineService.js";
 
 const backendDir = path.dirname(fileURLToPath(import.meta.url));
+const frontendDist = path.resolve(backendDir, "../frontend/dist");
 dotenv.config({ path: path.join(backendDir, ".env") });
 
 const app = express();
@@ -78,6 +79,8 @@ app.post(
     }
   },
 );
+app.use(express.static(frontendDist));
+app.get("*", (_req, res) => res.sendFile(path.join(frontendDist, "index.html")));
 app.use((e, _r, res, _n) => {
   console.error(e);
   res
